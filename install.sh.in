@@ -233,7 +233,7 @@ echo '*** Enabling and starting zerotier-one service...'
 
 if [ -e /usr/bin/systemctl -o -e /usr/sbin/systemctl -o -e /sbin/systemctl -o -e /bin/systemctl ]; then
 	$SUDO systemctl enable zerotier-one
-	$SUDO systemctl start zerotier-one
+	#$SUDO systemctl start zerotier-one
 	if [ "$?" != "0" ]; then
 		echo
 		echo '*** Package installed but cannot start service! You may be in a Docker'
@@ -247,7 +247,7 @@ else
 	else
 		$SUDO chkconfig zerotier-one on
 	fi
-	$SUDO /etc/init.d/zerotier-one start
+	#$SUDO /etc/init.d/zerotier-one start
 fi
 
 echo
